@@ -1,0 +1,18 @@
+---
+layout: default
+title: All Posts
+---
+<h1>Important Posts:</h1>
+<!-- generates a list of all posts with tag: important in the front matter -->
+{% if site.tags.important.size == null %}
+    <p style="text-align:center;">nothing here yet... O_O</p>
+{% else %}
+<ul>
+  {% for post in site.tags.important %}
+    <li>
+        <b><a href="{{ post.url }}">{{ post.title }}</a></b>
+    </li>
+  {% endfor %}
+</ul>
+{% endif %}
+<!-- im a genius look at what i just wrote wow -->

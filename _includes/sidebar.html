@@ -1,0 +1,12 @@
+<div id="sidebar" class="box-layout">
+    <img src="/assets/images/me.jpg">
+    <p>
+        Hi!!! welcome to my personal blog :O, have fun while reading my boring posts or exploring this shitty css mess. Here some useful links to navigate the website:
+    </p>
+    <!-- links are generated from _data/navigation.yml -->
+    <p>
+      {% for item in site.data.navigation %}
+        <a class="sidebarlink" href="{{ item.link }}" {% if page.url == item.link %}style="color:#867BB1;"{% endif %}>{{ item.name }}</a>
+      {% endfor %}
+    </p>
+</div>

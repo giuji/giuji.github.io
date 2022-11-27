@@ -1,0 +1,11 @@
+---
+layout: default
+title: all Cats are Grey
+---
+<p style="font-size:80%">
+    <b>latest blog post: </b>
+    {{ site.posts.last.date | date_to_string }}
+    <!-- shows latst post on homepage -->
+</p>
+<h1>{{ site.posts.last.title }}</h1>
+{{ site.posts.last.content }}

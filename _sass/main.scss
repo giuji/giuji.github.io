@@ -1,0 +1,104 @@
+/* THIS IS MY FIRST CSS STYLESHEET EVER IK IT SUCKS NO NEED TO POINT THAT OUT OK */
+* { 
+    @import url("https://dev-cats.github.io/code-snippets/JetBrainsMono.css");
+    font-family: "JetBrains Mono";
+    font-style: normal;
+}
+
+body { /* set gloval bg image */
+    background: #071022;
+    color: #c2cce0;
+    font-size: 15px;
+    line-height: 1.2;
+}
+
+.container { /* grid is in vw to match sidebar dimensions */
+    display: grid;
+    grid-template-columns: 25vw 50vw 25vw;
+}
+
+code { /* define code blocks */
+    font-size: inherit;
+    background: #0E2044;
+    padding: .1rem .3rem .2rem;
+    border-radius: .2rem;
+}
+
+h1 { /* define alignment and size for headings, i think a better way to do this exists */
+    text-align: center;
+    font-size: 170%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 135%;
+}
+
+img { /* keeps images inside their parent */
+    border: 1px solid #c2cce0;
+    width: 100%;
+    /* box-shadow: 0 0 5px 1px #c2cce0; */
+}
+    
+a { /* makes link a darker shade of blue and removes the underline */
+    color: #53699F;
+    text-decoration: none;
+    font-size: inherit; /* idk why but links are 10% bigger than other text idk maybe it's common knowledge */
+}
+
+.sidebarlink:before { /* adds square brackets to links from sidebar (check _includes/sidebar.html) */
+    content: "["
+}
+
+.sidebarlink:after {
+    content: "]"
+}
+
+.box-layout { /* class box-layout is used by both #big-box and #sidebar */
+    /* border: 2px solid #dfebdd; */
+    padding: 20px 20px 20px 20px;
+}
+
+#big-box { /* id big-box refers to <main> in _layouts/default.html */
+    grid-column: 2 / 3;
+}
+
+#big-box img {
+    margin: 0 15px;
+    width: calc(100% - 30px);
+}
+
+#blog-logo { /* logo is an image (check _includes/blog-logo.html) */
+    margin: 4% 0;
+    grid-column: 2 / 3;
+    text-align: center;
+}
+
+#sidebar { /* sidebar lives outside the grid on desktop layout cause i want it to be fixed and not scroll, there are probably better way to do this and maybe i could have used flexbox instead of grid but it's ok it resizes nicely and works ok this comment is too long :O */ 
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 80vw;
+    right: 2.5vw;
+    transform: translate(0, -50%);
+}
+
+#sidebar img {
+    width: 70%
+}
+
+@media only screen and (max-width: 35cm) { /* responsive, the sidebar attaches to the grid, middle column gets bigger */
+    .container {
+      grid-template-columns: 15px 1fr 15px;
+    }
+    #sidebar {
+      position: static;
+      grid-column: 2 / 3;
+      transform: translate(0, 0);
+      margin-bottom: 5%;
+    }
+    #sidebar img {
+        width: 0;
+        border-width: 0;
+    }
+}

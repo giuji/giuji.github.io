@@ -1,0 +1,11 @@
+- name: Home
+  link: /
+- name: About This Blog
+  link: /about-this-blog.html
+- name: About Me
+  link: /about-me.html
+- name: Important Posts
+  link: /important-posts.html
+- name: All Posts
+  link: /all-posts.html
+
