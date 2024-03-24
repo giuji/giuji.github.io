@@ -1,0 +1,91 @@
+@font-face {
+  font-family: "iosevka";
+  src: url("/css/Iosevka-Regular.woff2") format("woff2"), url("/css/Iosevka-Bold.woff2") format("woff2"), url("/css/Iosevka-Italic.woff2") format("woff2");
+}
+
+:root {
+  --background: #2e3440;
+  --light-background: #4c566a;
+  --foreground: #d8dee9;
+  --blue: #5e81ac;
+  --h1-color: #88c0d0; /* cyan */
+  --h2-color: #8fbcbb; /* bright blue */
+  --green: #a3be8c;
+  --magenta: #b48ead;
+}
+
+* {
+  font-family: "iosevka";
+  font-size: 18pt;
+}
+
+body { /* set gloval bg image */
+    background: var(--background);
+    color: var(--foreground);
+	  margin: 0;
+    text-align: center;
+}
+
+.container { /* grid is in vw to match footer dimensions */
+    display: grid;
+    grid-template-columns: 22vw 56vw 22vw;
+}
+
+code { /* define code blocks */
+    font-size: inherit;
+    background: var(--light-background);
+    padding: .1rem .3rem .2rem;
+    border-radius: .2rem;
+}
+
+h1 { /* define alignment and size for headings, i think a better way to do this exists */
+	  color: var(--h1-color);
+}
+
+h2 {
+	  color: var(--h2-color);
+}
+
+img { /* keeps images inside their parent */
+    border: 1px solid var(--foreground);
+    width: 100%;
+    box-shadow: 0 0 5px 1px #0000003d;
+}
+    
+a { /* makes link a darker shade of blue and removes the underline */
+    color: var(--blue);
+    text-decoration: none;
+    font-size: inherit; /* idk why but links are 10% bigger than other text idk maybe it's common knowledge */
+}
+
+main { /* id big-box refers to <main> in _layouts/default.html */
+    grid-column: 2 / 3;
+    padding: 0 20px;
+    margin: 15px;
+    width: calc(100% - 30px);
+}
+
+#blog-logo  { /* logo is an image (check _includes/blog-logo.html) */
+    margin: 5% 0;
+    grid-column: 2 / 3;
+}
+
+li::marker {
+    content: '\2726  ';
+    color: #4c566a;
+}
+
+ul {
+    margin: 0;
+    text-align: left;
+    display: inline-block;
+}
+
+@media only screen and (max-width: 30cm) { /* responsive, the footer attaches to the grid, middle column gets bigger */
+    .container {
+      grid-template-columns: 15px 1fr 15px;
+    }
+    #footer {
+		margin: 0 20px;
+	}
+}
