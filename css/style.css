@@ -19,26 +19,26 @@
   font-size: 18pt;
 }
 
-body { /* set gloval bg image */
+body { 
     background: var(--background);
     color: var(--foreground);
 	margin: 0;
     text-align: center;
 }
 
-.container { /* grid is in vw to match footer dimensions */
+.container { 
     display: grid;
     grid-template-columns: 22vw 56vw 22vw;
 }
 
-code { /* define code blocks */
+code { 
     font-size: inherit;
     background: var(--light-background);
     padding: .1rem .3rem .2rem;
     border-radius: .2rem;
 }
 
-h1 { /* define alignment and size for headings, i think a better way to do this exists */
+h1 { 
 	  color: var(--h1-color);
 }
 
@@ -46,32 +46,24 @@ h2 {
 	  color: var(--h2-color);
 }
 
-/* img { 
-    border: 1px solid var(--foreground);
-    width: 100%;
-    box-shadow: 0 0 5px 1px #0000003d;
-    margin: 15px;
-    width: calc(100% - 30px);
-} */
-    
-a { /* makes link a darker shade of blue and removes the underline */
+a { 
     color: var(--blue);
     text-decoration: none;
     font-size: inherit;
 }
 
-main { /* id big-box refers to <main> in _layouts/default.html */
+main { 
     grid-column: 2 / 3;
     padding: 0 20px;
 }
 
-#blog-logo  { /* logo is an image (check _includes/blog-logo.html) */
+#blog-logo  { 
     margin: 5% 0;
     grid-column: 2 / 3;
 }
 
 #blog-logo img {
-    width: 40%;
+    max-width: 100%;
 }
 
 li::marker {
@@ -88,8 +80,5 @@ ul {
 @media (orientation: portrait) { 
     .container {
       grid-template-columns: 15px 1fr 15px;
-    }
-    # blog-logo img {
-        width: 60%;
     }
 }
