@@ -68,7 +68,7 @@ main {
 
 li::marker {
     content: '\2726  ';
-    color: --var(--light-background);
+    color: var(--light-background);
 }
 
 ul {
