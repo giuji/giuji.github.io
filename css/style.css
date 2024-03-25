@@ -85,11 +85,11 @@ ul {
     display: inline-block;
 }
 
-@media only screen and (max-width: 30cm) { /* responsive, the footer attaches to the grid, middle column gets bigger */
+@media (orientation: portrait) { 
     .container {
       grid-template-columns: 15px 1fr 15px;
     }
-    #blog-logo img {
+    # blog-logo img {
         width: 60%;
     }
 }
