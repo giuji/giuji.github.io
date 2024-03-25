@@ -46,16 +46,18 @@ h2 {
 	  color: var(--h2-color);
 }
 
-img { /* keeps images inside their parent */
+/* img { 
     border: 1px solid var(--foreground);
     width: 100%;
     box-shadow: 0 0 5px 1px #0000003d;
-}
+    margin: 15px;
+    width: calc(100% - 30px);
+} */
     
 a { /* makes link a darker shade of blue and removes the underline */
     color: var(--blue);
     text-decoration: none;
-    font-size: inherit; /* idk why but links are 10% bigger than other text idk maybe it's common knowledge */
+    font-size: inherit;
 }
 
 main { /* id big-box refers to <main> in _layouts/default.html */
@@ -63,19 +65,18 @@ main { /* id big-box refers to <main> in _layouts/default.html */
     padding: 0 20px;
 }
 
-/*img {
-    margin: 15px;
-    width: calc(100% - 30px);
-}*/
-
 #blog-logo  { /* logo is an image (check _includes/blog-logo.html) */
     margin: 5% 0;
     grid-column: 2 / 3;
 }
 
+#blog-logo img {
+    width: 40%;
+}
+
 li::marker {
     content: '\2726  ';
-    color: #4c566a;
+    color: --var(--light-background);
 }
 
 ul {
@@ -88,7 +89,7 @@ ul {
     .container {
       grid-template-columns: 15px 1fr 15px;
     }
-    #footer {
-		margin: 0 20px;
-	}
+    #blog-logo img {
+        width: 60%;
+    }
 }
