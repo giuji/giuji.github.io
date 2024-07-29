@@ -1,7 +1,4 @@
-@font-face {
-  font-family: "iosevka";
-  src: url("/css/Iosevka-Regular.woff2") format("woff2"), url("/css/Iosevka-Bold.woff2") format("woff2"), url("/css/Iosevka-Italic.woff2") format("woff2");
-}
+@import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/cascadia-code.min.css");
 
 :root {
   --background: #2e3440;
@@ -15,20 +12,14 @@
 }
 
 * {
-  font-family: "iosevka";
-  font-size: 18pt;
+  font-family: 'Cascadia Code', sans-serif;
+  font-size: 15pt;
+  background: var(--background);
 }
 
 body { 
-    background: var(--background);
     color: var(--foreground);
-	margin: 0;
     text-align: center;
-}
-
-.container { 
-    display: grid;
-    grid-template-columns: 22vw 56vw 22vw;
 }
 
 code { 
@@ -39,11 +30,11 @@ code {
 }
 
 h1 { 
-	  color: var(--h1-color);
+    color: var(--h1-color);
 }
 
 h2 {
-	  color: var(--h2-color);
+    color: var(--h2-color);
 }
 
 a { 
@@ -52,14 +43,8 @@ a {
     font-size: inherit;
 }
 
-main { 
-    grid-column: 2 / 3;
-    padding: 0 20px;
-}
-
 #blog-logo  { 
-    margin: 5% 0;
-    grid-column: 2 / 3;
+    margin: 2% 0;
 }
 
 #blog-logo img {
@@ -67,18 +52,10 @@ main {
 }
 
 li::marker {
-    content: '\2726  ';
     color: var(--light-background);
 }
 
 ul {
-    margin: 0;
     text-align: left;
     display: inline-block;
-}
-
-@media (orientation: portrait) { 
-    .container {
-      grid-template-columns: 15px 1fr 15px;
-    }
 }
