@@ -1,25 +1,42 @@
 @import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/cascadia-code.min.css");
 
 :root {
-  --background: #2e3440;
-  --light-background: #4c566a;
-  --foreground: #d8dee9;
-  --blue: #5e81ac;
-  --h1-color: #88c0d0; /* cyan */
-  --h2-color: #8fbcbb; /* bright blue */
-  --green: #a3be8c;
-  --magenta: #b48ead;
+    --backdrop: #999999;
+    --background: #000000;
+    --light-background: #222222;
+    --foreground: #f8f7f2;
+    --blue: #5f8787;
+    --red: #79241f;
 }
 
 * {
-  font-family: 'Cascadia Code', sans-serif;
-  font-size: 15pt;
-  background: var(--background);
+    font-family: 'Cascadia Code', sans-serif;
 }
 
-body { 
+body {
+    background: var(--backdrop);
+}
+
+.container {
+    margin-top: 5vw;
+    margin-left: 30vw;
+    margin-right: 30vw;
+}
+
+.box {
+    background: var(--background);
     color: var(--foreground);
-    text-align: center;
+    border: 1px solid var(--foreground);
+    padding: 2.5%;
+    margin: 4% auto 4% auto;
+}
+
+main {
+    font-size: 13pt;
+}
+
+#title {
+    font-size: 20pt;
 }
 
 code { 
@@ -29,12 +46,8 @@ code {
     border-radius: .2rem;
 }
 
-h1 { 
-    color: var(--h1-color);
-}
-
-h2 {
-    color: var(--h2-color);
+i {
+    color: var(--red);
 }
 
 a { 
@@ -43,19 +56,9 @@ a {
     font-size: inherit;
 }
 
-#blog-logo  { 
-    margin: 2% 0;
-}
-
-#blog-logo img {
-    max-width: 100%;
-}
-
-li::marker {
-    color: var(--light-background);
-}
-
-ul {
-    text-align: left;
-    display: inline-block;
+@media (max-aspect-ratio: 1.2/1) {
+ .container {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }   
 }
